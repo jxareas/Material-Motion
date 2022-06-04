@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(setOf(R.id.artworksFragment, R.id.toursFragment))
-        binding.bottomNavigation.setupWithNavController(navController)
 
 
     }

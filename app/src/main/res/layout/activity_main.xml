@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="10"
     tools:context=".ui.MainActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9"
-        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -31,20 +25,6 @@
 
         <include layout="@layout/content_main" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        app:itemTextAppearanceActive="@style/TextAppearance.MotionX.Subtitle1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:itemActiveIndicatorStyle="@style/MotionX.Widget.BottomNavigationView.ActiveIndicator"
-        app:itemHorizontalTranslationEnabled="true"
-        app:itemIconTint="?attr/colorOnSurface"
-        app:itemRippleColor="@color/cardinal_alternate"
-        app:itemTextColor="?attr/colorOnSurface"
-        app:menu="@menu/menu_bottom" />
 
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
