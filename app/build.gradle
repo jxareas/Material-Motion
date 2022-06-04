@@ -75,5 +75,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization"
     implementation "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$kotlin_serialization_converter"
 
+    // Splash Screen API
+    implementation "androidx.core:core-splashscreen:$splash_screen"
 
 }

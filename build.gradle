@@ -2,7 +2,7 @@
 buildscript {
     ext {
         COMPILE_SDK = 32
-        MIN_SDK = 18
+        MIN_SDK = 21
         TARGET_SDK = COMPILE_SDK
 
         kotlinx = "1.8.0"
@@ -15,6 +15,7 @@ buildscript {
         constraint_layout = "2.1.4"
         kotlin_coroutines = "1.6.1"
         kotlin_serialization = "1.2.2"
+        splash_screen = "1.0.0-beta02"
         kotlin_serialization_converter = "0.8.0"
         dagger_hilt = "2.40.5"
     }
