@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:theme="@style/MotionX.Default"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".ui.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="9"
-        android:layout_height="0dp">
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -23,7 +22,10 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize" />
+                app:titleTextAppearance="@style/TextAppearance.MotionX.Headline6"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/app_name"
+                app:titleTextColor="?attr/colorOnSurface" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -32,12 +34,17 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        app:itemActiveIndicatorStyle="@style/MotionX.Widget.BottomNavigationView.ActiveIndicator"
-        app:itemRippleColor="@color/cardinal_alternate"
+        android:id="@+id/bottom_navigation"
+        app:itemTextAppearanceActive="@style/TextAppearance.MotionX.Subtitle1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:menu="@menu/menu_bottom"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        app:itemActiveIndicatorStyle="@style/MotionX.Widget.BottomNavigationView.ActiveIndicator"
+        app:itemHorizontalTranslationEnabled="true"
+        app:itemIconTint="?attr/colorOnSurface"
+        app:itemRippleColor="@color/cardinal_alternate"
+        app:itemTextColor="?attr/colorOnSurface"
+        app:menu="@menu/menu_bottom" />
 
 
 </LinearLayout>

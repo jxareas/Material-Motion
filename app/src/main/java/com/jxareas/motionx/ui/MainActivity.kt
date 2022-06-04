@@ -1,6 +1,7 @@
 package com.jxareas.motionx.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
@@ -11,13 +12,14 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.ui.setupWithNavController
 import com.jxareas.motionx.R
 import com.jxareas.motionx.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding : ActivityMainBinding
+    lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -25,13 +27,18 @@ class MainActivity : AppCompatActivity() {
 
         installSplashScreen()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater).apply {
+            toolbar.title = getString(R.string.app_name)
+        }
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
+
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.artworksFragment, R.id.toursFragment))
+        binding.bottomNavigation.setupWithNavController(navController)
+
 
     }
 

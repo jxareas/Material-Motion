@@ -9,11 +9,11 @@
     <fragment
         android:id="@+id/artworksFragment"
         android:name="com.jxareas.motionx.ui.artworks.ArtworksFragment"
-        android:label="fragment_artworks"
+        android:label="@string/action_artworks"
         tools:layout="@layout/fragment_artworks" />
     <fragment
         android:id="@+id/toursFragment"
         android:name="com.jxareas.motionx.ui.tours.ToursFragment"
-        android:label="fragment_tours"
+        android:label="@string/action_tours"
         tools:layout="@layout/fragment_tours" />
 </navigation>

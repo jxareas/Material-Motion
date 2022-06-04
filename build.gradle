@@ -8,6 +8,7 @@ buildscript {
         kotlinx = "1.8.0"
         kotlin = "1.6.10"
         appcompat = "1.4.2"
+        cardview = "1.0.0"
         material = "1.7.0-alpha02"
         retrofit = "2.9.0"
         navigation = "2.4.2"
@@ -15,7 +16,7 @@ buildscript {
         constraint_layout = "2.1.4"
         kotlin_coroutines = "1.6.1"
         kotlin_serialization = "1.2.2"
-        splash_screen = "1.0.0-beta02"
+        splash_screen = "1.0.0-rc01"
         kotlin_serialization_converter = "0.8.0"
         dagger_hilt = "2.40.5"
     }
