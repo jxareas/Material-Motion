@@ -29,9 +29,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+
     }
     buildFeatures {
         viewBinding true
@@ -78,6 +81,8 @@ dependencies {
     // Cardview
     implementation "androidx.cardview:cardview:$cardview"
 
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide"
 
     // Splash Screen API
     implementation "androidx.core:core-splashscreen:$splash_screen"

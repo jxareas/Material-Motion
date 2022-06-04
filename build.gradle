@@ -17,6 +17,7 @@ buildscript {
         kotlin_coroutines = "1.6.1"
         kotlin_serialization = "1.2.2"
         splash_screen = "1.0.0-rc01"
+        glide = "4.12.0"
         kotlin_serialization_converter = "0.8.0"
         dagger_hilt = "2.40.5"
     }
