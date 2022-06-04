@@ -1,4 +1,31 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        COMPILE_SDK = 32
+        MIN_SDK = 18
+        TARGET_SDK = COMPILE_SDK
+
+        kotlinx = "1.8.0"
+        kotlin = "1.6.10"
+        appcompat = "1.4.2"
+        material = "1.7.0-alpha02"
+        retrofit = "2.9.0"
+        navigation = "2.4.2"
+        ok_http3_logging = "5.0.0-alpha.3"
+        constraint_layout = "2.1.4"
+        kotlin_coroutines = "1.6.1"
+        kotlin_serialization = "1.2.2"
+        kotlin_serialization_converter = "0.8.0"
+        dagger_hilt = "2.40.5"
+    }
+
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$dagger_hilt"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin"
+    }
+}
+
 plugins {
     id 'com.android.application' version '7.2.1' apply false
     id 'com.android.library' version '7.2.1' apply false

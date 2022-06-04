@@ -1,9 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MotionX" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.MotionX" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Typography -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MotionX.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MotionX.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MotionX.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MotionX.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MotionX.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MotionX.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MotionX.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MotionX.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MotionX.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MotionX.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MotionX.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MotionX.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MotionX.Overline</item>
+
+        <!--System/Platform attributes-->
+        <item name="android:windowBackground">?android:colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
     </style>
 
-    <style name="Theme.MotionX" parent="Base.Theme.MotionX" />
+    <style name="Light.MotionX" parent="Base.MotionX" >
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/cardinal</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/white_alternate</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSurface">@color/cardinal_alternate</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimaryContainer">@color/cardinal_alternate</item>
+        <item name="colorOnPrimaryContainer">@color/white_alternate</item>
+    </style>
+
 </resources>
