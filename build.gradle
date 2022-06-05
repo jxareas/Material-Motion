@@ -14,10 +14,11 @@ buildscript {
         navigation = "2.4.2"
         ok_http3_logging = "5.0.0-alpha.3"
         constraint_layout = "2.1.4"
+        recycler_view = "1.2.1"
         kotlin_coroutines = "1.6.1"
         kotlin_serialization = "1.2.2"
         splash_screen = "1.0.0-rc01"
-        glide = "4.12.0"
+        glide = "4.13.1"
         kotlin_serialization_converter = "0.8.0"
         dagger_hilt = "2.40.5"
     }

@@ -47,4 +47,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_artworks">Artworks</string>
     <string name="action_tours">Tours</string>
+    <string name="artwork_detail_transition">shared_element_detail</string>
 </resources>

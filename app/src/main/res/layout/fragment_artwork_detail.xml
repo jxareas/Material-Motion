@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="2"
+    android:orientation="vertical"
     tools:context=".ui.artworks.ArtworkDetailFragment">
 
     <ImageView
+        android:layout_weight="1"
         android:id="@+id/image_view_artwork"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        android:transitionName="@string/artwork_detail_transition"
         tools:src="@tools:sample/backgrounds/scenic" />
-</FrameLayout>
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_height="match_parent"/>
+</LinearLayout>
