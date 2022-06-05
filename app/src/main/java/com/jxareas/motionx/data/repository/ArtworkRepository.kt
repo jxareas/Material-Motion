@@ -7,4 +7,6 @@ interface ArtworkRepository {
 
     suspend fun getAllArtworks() : Flow<List<Artwork>>
 
+    suspend fun getArtworkById(id : Int) : Flow<Artwork>
+
 }

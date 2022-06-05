@@ -10,10 +10,23 @@
         android:id="@+id/artworksFragment"
         android:name="com.jxareas.motionx.ui.artworks.ArtworksFragment"
         android:label="@string/action_artworks"
-        tools:layout="@layout/fragment_artworks" />
+        tools:layout="@layout/fragment_artworks" >
+        <action
+            android:id="@+id/action_artwork_to_detail"
+            app:destination="@id/artworkDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/toursFragment"
         android:name="com.jxareas.motionx.ui.tours.ToursFragment"
         android:label="@string/action_tours"
         tools:layout="@layout/fragment_tours" />
+    <fragment
+        android:id="@+id/artworkDetailFragment"
+        android:name="com.jxareas.motionx.ui.artworks.ArtworkDetailFragment"
+        android:label="fragment_artwork_detail"
+        tools:layout="@layout/fragment_artwork_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

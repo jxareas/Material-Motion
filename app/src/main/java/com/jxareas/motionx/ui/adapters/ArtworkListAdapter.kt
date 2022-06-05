@@ -1,6 +1,7 @@
 package com.jxareas.motionx.ui.adapters
 
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.jxareas.motionx.data.domain.model.Artwork
 import com.jxareas.motionx.databinding.ItemArtworkBinding
 import com.jxareas.motionx.ui.adapters.ArtworkListAdapter.ArtworkViewHolder
+import com.jxareas.motionx.ui.artworks.ArtworksFragmentDirections
 import com.jxareas.motionx.utils.bind
 
 class ArtworkListAdapter : ListAdapter<Artwork, ArtworkViewHolder>(diffConfig) {
@@ -25,11 +27,20 @@ class ArtworkListAdapter : ListAdapter<Artwork, ArtworkViewHolder>(diffConfig) {
 
         val diffConfig = AsyncDifferConfig.Builder(ArtworkDiffUtil).build()
 
-
     }
 
     inner class ArtworkViewHolder(private val binding: ItemArtworkBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener { view ->
+                val id = currentList[adapterPosition].id
+                val direction = ArtworksFragmentDirections.actionArtworkToDetail(id)
+                Navigation.findNavController(view).navigate(direction)
+            }
+        }
+
+
         internal fun bind(artwork: Artwork): Unit = binding.run {
             Glide.with(root.context)
                 .load(artwork.imageUrl)

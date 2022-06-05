@@ -1,16 +1,14 @@
 package com.jxareas.motionx.ui.tours
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.jxareas.motionx.R
-import com.jxareas.motionx.ui.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ToursFragment : Fragment() {
 
     override fun onCreateView(

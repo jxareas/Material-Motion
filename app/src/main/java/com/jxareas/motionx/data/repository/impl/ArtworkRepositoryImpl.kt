@@ -19,5 +19,12 @@ class ArtworkRepositoryImpl @Inject constructor(
             emit(artworks)
         }
 
+    override suspend fun getArtworkById(id : Int): Flow<Artwork> =
+        flow {
+        val response = service.fetchArtworkById(id).data
+        val artwork = mapper.mapToDomain(response)
+        emit(artwork)
+    }
+
 
 }
