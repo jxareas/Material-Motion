@@ -16,6 +16,7 @@ import com.jxareas.motionx.R
 import com.jxareas.motionx.data.domain.model.Artwork
 import com.jxareas.motionx.databinding.FragmentArtworksBinding
 import com.jxareas.motionx.ui.adapters.ArtworkListAdapter
+import com.jxareas.motionx.utils.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -71,7 +72,7 @@ class ArtworksFragment : Fragment(), ArtworkListAdapter.ArtworkAdapterListener {
         val transitionName = getString(R.string.artwork_detail_transition)
         val extra = FragmentNavigatorExtras(cardView to transitionName)
         val direction = ArtworksFragmentDirections.actionArtworkToDetail(artwork.id)
-        findNavController().navigate(direction, extra)
+        findNavController().safeNavigate(direction, extra)
     }
 
 
