@@ -11,6 +11,6 @@ data class ApiArtwork
     @SerialName("title")
     val title: String,
     @SerialName("image_id")
-    val imageId: String
+    val imageId: String?
 )
 

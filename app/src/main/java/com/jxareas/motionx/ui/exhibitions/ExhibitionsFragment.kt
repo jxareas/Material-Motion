@@ -1,4 +1,4 @@
-package com.jxareas.motionx.ui.tours
+package com.jxareas.motionx.ui.exhibitions
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.jxareas.motionx.R
 
-class ToursFragment : Fragment() {
+class ExhibitionsFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ToursFragment()
+        fun newInstance() = ExhibitionsFragment()
     }
 
-    private lateinit var viewModel: ToursViewModel
+    private lateinit var viewModel: ExhibitionsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_tours, container, false)
+        return inflater.inflate(R.layout.fragment_exhibitions, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ToursViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ExhibitionsViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

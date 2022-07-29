@@ -1,4 +1,4 @@
-package com.jxareas.motionx.data.domain.model
+package com.jxareas.motionx.domain.model
 
 import com.jxareas.motionx.data.api.dto.model.ApiConfig
 
@@ -6,7 +6,7 @@ class Artwork(
     val id: Int,
     val title: String,
     val imageId: String,
-    val config: ApiConfig
+    private val config: ApiConfig
 ) {
 
     val imageUrl : String

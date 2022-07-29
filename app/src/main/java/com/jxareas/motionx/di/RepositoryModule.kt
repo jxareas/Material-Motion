@@ -1,18 +1,19 @@
 package com.jxareas.motionx.di
 
-import com.jxareas.motionx.data.repository.ArtworkRepository
-import com.jxareas.motionx.data.repository.impl.ArtworkRepositoryImpl
+import com.jxareas.motionx.domain.repository.ArtworkRepository
+import com.jxareas.motionx.data.repository.ArtworkRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ViewModelComponent::class)
-abstract class RepositoryModule {
+@InstallIn(SingletonComponent::class)
+interface RepositoryModule {
 
     @Binds
-    @ViewModelScoped
-    abstract fun bindArtworkRepository(repository : ArtworkRepositoryImpl) : ArtworkRepository
+    @Singleton
+    fun bindArtworkRepository(repository: ArtworkRepositoryImpl): ArtworkRepository
 }

@@ -3,30 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/artworksFragment"
-    >
+    app:startDestination="@id/artworksFragment">
 
     <fragment
         android:id="@+id/artworksFragment"
         android:name="com.jxareas.motionx.ui.artworks.ArtworksFragment"
-        android:label="@string/action_artworks"
-        tools:layout="@layout/fragment_artworks" >
-        <action
-            android:id="@+id/action_artwork_to_detail"
-            app:destination="@id/artworkDetailFragment" />
-    </fragment>
+        android:label="fragment_artworks"
+        tools:layout="@layout/fragment_artworks" />
+    <fragment
+        android:id="@+id/exhibitionsFragment"
+        android:name="com.jxareas.motionx.ui.exhibitions.ExhibitionsFragment"
+        android:label="fragment_exhibitions"
+        tools:layout="@layout/fragment_exhibitions" />
     <fragment
         android:id="@+id/toursFragment"
         android:name="com.jxareas.motionx.ui.tours.ToursFragment"
-        android:label="@string/action_tours"
+        android:label="fragment_tours"
         tools:layout="@layout/fragment_tours" />
-    <fragment
-        android:id="@+id/artworkDetailFragment"
-        android:name="com.jxareas.motionx.ui.artworks.ArtworkDetailFragment"
-        android:label="fragment_artwork_detail"
-        tools:layout="@layout/fragment_artwork_detail" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
-    </fragment>
 </navigation>

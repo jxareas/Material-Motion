@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.jxareas.motionx.data.domain.model.Artwork
+import com.jxareas.motionx.domain.model.Artwork
 import com.jxareas.motionx.databinding.ItemArtworkBinding
 import com.jxareas.motionx.ui.adapters.ArtworkListAdapter.ArtworkViewHolder
 import com.jxareas.motionx.utils.bind
@@ -16,7 +16,7 @@ import com.jxareas.motionx.utils.bind
 class ArtworkListAdapter(private val listener: ArtworkAdapterListener) :
     ListAdapter<Artwork, ArtworkViewHolder>(diffConfig) {
 
-
+    @FunctionalInterface
     interface ArtworkAdapterListener {
         fun onArtworkClicked(cardView: View, artwork: Artwork)
     }
@@ -40,7 +40,6 @@ class ArtworkListAdapter(private val listener: ArtworkAdapterListener) :
         private val listener: ArtworkAdapterListener,
     ) :
         RecyclerView.ViewHolder(binding.root) {
-
 
 
         internal fun bind(artwork: Artwork): Unit = binding.run {

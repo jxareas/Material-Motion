@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.MotionX" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.MotionX" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Typography -->
         <item name="textAppearanceHeadline1">@style/TextAppearance.MotionX.Headline1</item>
@@ -24,16 +24,16 @@
 
     <style name="MotionX.Default" parent="Base.MotionX" >
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/cardinal</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/white_alternate</item>
         <item name="colorOnSecondary">@color/black</item>
         <item name="colorSurface">@color/burgundy</item>
-        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurface">@color/grey_400</item>
         <item name="colorPrimaryContainer">@color/cardinal_alternate</item>
         <item name="colorOnPrimaryContainer">@color/white_alternate</item>
         <item name="colorOnSecondaryContainer">@color/white</item>
-        <item name="itemRippleColor">@color/cardinal_alternate</item>
+        <item name="itemRippleColor">@color/white</item>
         <item name="android:statusBarColor">?attr/colorSurface</item>
         <item name="android:textColorSecondary">@color/white</item>
     </style>

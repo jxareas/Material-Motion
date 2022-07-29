@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface ArtworkService {
 
     @GET(ApiConstants.ARTWORKS)
-    suspend fun fetchArtworks(@Query("limit") size : Int = 40) : GetPaginatedArtworksResponse
+    suspend fun fetchLatestArtworks(@Query("limit") size : Int = 40) : GetPaginatedArtworksResponse
 
     @GET("${ApiConstants.ARTWORKS}/{id}")
     suspend fun fetchArtworkById(@Path("id") artworkId : Int) : GetOneArtworkResponse

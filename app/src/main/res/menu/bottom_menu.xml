@@ -14,5 +14,12 @@
         android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/action_tours"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/exhibitionsFragment"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/action_exhibitions"
+
+        app:showAsAction="ifRoom" />
 
 </menu>

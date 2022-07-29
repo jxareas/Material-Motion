@@ -11,7 +11,7 @@ buildscript {
         cardview = "1.0.0"
         material = "1.7.0-alpha02"
         retrofit = "2.9.0"
-        navigation = "2.4.2"
+        navigation = "2.3.0"
         ok_http3_logging = "5.0.0-alpha.3"
         constraint_layout = "2.1.4"
         recycler_view = "1.2.1"
@@ -20,7 +20,7 @@ buildscript {
         splash_screen = "1.0.0-rc01"
         glide = "4.13.1"
         kotlin_serialization_converter = "0.8.0"
-        dagger_hilt = "2.40.5"
+        dagger_hilt = "2.42"
     }
 
     dependencies {
@@ -33,7 +33,7 @@ buildscript {
 plugins {
     id 'com.android.application' version '7.2.1' apply false
     id 'com.android.library' version '7.2.1' apply false
-    id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
 }
 
 task clean(type: Delete) {
