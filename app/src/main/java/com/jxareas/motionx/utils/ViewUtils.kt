@@ -2,6 +2,7 @@ package com.jxareas.motionx.utils
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IdRes
 import androidx.fragment.app.FragmentManager
@@ -11,6 +12,11 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 
+fun View.visible() = apply { visibility = View.VISIBLE }
+
+fun View.gone() = apply { visibility = View.GONE }
+
+fun View.invisible() = apply { visibility = View.INVISIBLE }
 
 internal inline infix fun <reified VB : ViewBinding> ViewGroup.bind(
     crossinline bindingInflater: LayoutInflater.(parent: ViewGroup, attachToParent: Boolean) -> VB,

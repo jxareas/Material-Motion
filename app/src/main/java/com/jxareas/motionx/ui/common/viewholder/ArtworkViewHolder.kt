@@ -17,7 +17,6 @@ class ArtworkViewHolder(private val binding: ItemArtworkBinding) :
 
         val defaultRequestOptions by lazy {
             RequestOptions()
-                .error(R.drawable.uchicago)
                 .placeholder(R.drawable.course_image_placeholder)
         }
 

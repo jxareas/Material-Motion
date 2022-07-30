@@ -3,6 +3,7 @@ package com.jxareas.motionx.di
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.jxareas.motionx.data.api.constants.ApiEndpoints
 import com.jxareas.motionx.data.api.service.ArtworkService
+import com.jxareas.motionx.data.api.service.ExhibitionService
 import com.jxareas.motionx.data.api.service.TourService
 import dagger.Module
 import dagger.Provides
@@ -66,5 +67,9 @@ object NetworkModule {
     fun provideTourService(retrofit: Retrofit): TourService =
         retrofit.create()
 
+    @Provides
+    @Singleton
+    fun provideExhibitionService(retrofit : Retrofit) : ExhibitionService =
+        retrofit.create()
 
 }

@@ -20,7 +20,7 @@ class ArtworkListAdapter(private val listener: ArtworkAdapterListener) :
             val artwork by lazy { currentList[bindingAdapterPosition] }
 
             itemView.setOnClickListener { root ->
-                listener.onArtworkClicked(root, artwork)
+                listener.onClick(root, artwork)
             }
 
         }

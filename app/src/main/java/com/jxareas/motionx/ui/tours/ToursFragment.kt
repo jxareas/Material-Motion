@@ -51,7 +51,7 @@ class ToursFragment : Fragment(), TourAdapterListener {
         _binding = null
     }
 
-    override fun onArtworkClicked(view: View, item: Tour) {
+    override fun onClick(view: View, item: Tour) {
         //
     }
 

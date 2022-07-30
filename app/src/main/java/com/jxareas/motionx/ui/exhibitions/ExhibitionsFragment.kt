@@ -1,32 +1,58 @@
 package com.jxareas.motionx.ui.exhibitions
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jxareas.motionx.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.jxareas.motionx.databinding.FragmentExhibitionsBinding
+import com.jxareas.motionx.domain.model.Exhibition
+import com.jxareas.motionx.ui.common.adapter.ExhibitionListAdapter
+import com.jxareas.motionx.ui.common.listener.ExhibitionAdapterListener
+import dagger.hilt.android.AndroidEntryPoint
 
-class ExhibitionsFragment : Fragment() {
+@AndroidEntryPoint
+class ExhibitionsFragment : Fragment(), ExhibitionAdapterListener {
+    private var _binding: FragmentExhibitionsBinding? = null
+    private val binding: FragmentExhibitionsBinding
+        get() = _binding!!
 
-    companion object {
-        fun newInstance() = ExhibitionsFragment()
-    }
-
-    private lateinit var viewModel: ExhibitionsViewModel
+    private val exhibitionAdapter: ExhibitionListAdapter = ExhibitionListAdapter(this)
+    private val viewModel: ExhibitionsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        return inflater.inflate(R.layout.fragment_exhibitions, container, false)
+    ): View {
+        _binding = FragmentExhibitionsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ExhibitionsViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
+        setupObservers()
     }
+
+    private fun setupObservers() {
+        viewModel.exhibitions.observe(viewLifecycleOwner) { listOfExhibitions ->
+            listOfExhibitions?.let { exhibitionAdapter.submitList(it) }
+        }
+    }
+
+    private fun setupRecyclerView() = binding.recyclerViewExhibitions.run {
+        adapter = exhibitionAdapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    override fun onClick(view: View, item: Exhibition) {
+        // TODO: Navigate to details screen
+    }
+
 
 }

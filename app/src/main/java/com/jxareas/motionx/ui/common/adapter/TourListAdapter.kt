@@ -19,7 +19,7 @@ class TourListAdapter(private val listener: TourAdapterListener) :
             val tour by lazy { currentList[bindingAdapterPosition] }
 
             itemView.setOnClickListener { root ->
-                listener.onArtworkClicked(root, tour)
+                listener.onClick(root, tour)
             }
 
         }

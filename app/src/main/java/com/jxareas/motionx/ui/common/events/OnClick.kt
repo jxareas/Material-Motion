@@ -4,5 +4,5 @@ import android.view.View
 
 @FunctionalInterface
 interface OnClick<T> {
-    fun onArtworkClicked(view : View, item : T)
+    fun onClick(view : View, item : T)
 }

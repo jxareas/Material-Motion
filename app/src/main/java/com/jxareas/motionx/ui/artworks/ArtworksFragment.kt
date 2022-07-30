@@ -11,6 +11,9 @@ import com.jxareas.motionx.databinding.FragmentArtworksBinding
 import com.jxareas.motionx.domain.model.Artwork
 import com.jxareas.motionx.ui.common.adapter.ArtworkListAdapter
 import com.jxareas.motionx.ui.common.listener.ArtworkAdapterListener
+import com.jxareas.motionx.ui.common.state.LoadingState
+import com.jxareas.motionx.utils.gone
+import com.jxareas.motionx.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -49,7 +52,27 @@ class ArtworksFragment : Fragment(), ArtworkAdapterListener {
 
     private fun setupObservers() {
         viewModel.artworks.observe(viewLifecycleOwner) { listOfArtworks ->
-            artworksAdapter.submitList(listOfArtworks)
+            listOfArtworks?.let { artworksAdapter.submitList(it) }
+        }
+        viewModel.loadingState.observe(viewLifecycleOwner) { loadingState ->
+            loadingState?.let { handleLoadingStatus(it) }
+
+        }
+    }
+
+    private fun handleLoadingStatus(loadingState: LoadingState) {
+        when (loadingState) {
+            LoadingState.LOADING -> {
+                binding.loadingScreen.root.visible()
+                binding.recyclerViewArtworks.gone()
+            }
+            LoadingState.DONE -> {
+                binding.recyclerViewArtworks.visible()
+                binding.loadingScreen.root.gone()
+            }
+            LoadingState.ERROR -> {
+
+            }
         }
     }
 
@@ -58,7 +81,7 @@ class ArtworksFragment : Fragment(), ArtworkAdapterListener {
         _binding = null
     }
 
-    override fun onArtworkClicked(cardView: View, artwork: Artwork) {
+    override fun onClick(cardView: View, artwork: Artwork) {
         // TODO: Navigate to Artworks Detail Screen
         //
     }
