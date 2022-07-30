@@ -5,31 +5,31 @@
     <!--Typography-->
 
     <style name="TextAppearance.MotionX.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/proza_libre</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
     </style>
 
     <style name="TextAppearance.MotionX.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="fontFamily">@font/proza_libre</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
       <!--        <item name="android:textColor">@color/color_on_surface_emphasis_high</item>-->
     </style>
 
     <style name="TextAppearance.MotionX.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/proza_libre</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
       <!--        <item name="android:textColor">@color/color_on_surface_emphasis_high</item>-->
     </style>
 
     <style name="TextAppearance.MotionX.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/proza_libre</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
       <!--        <item name="android:textColor">@color/color_on_surface_emphasis_high</item>-->
     </style>
 
     <style name="TextAppearance.MotionX.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/proza_libre</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
       <!--        <item name="android:textColor">@color/color_on_surface_emphasis_high</item>-->
     </style>
 
     <style name="TextAppearance.MotionX.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/proza_libre</item>
+        <item name="fontFamily">@font/source_sans_pro</item>
       <!--        <item name="android:textColor">@color/color_on_surface_emphasis_high</item>-->
     </style>
 

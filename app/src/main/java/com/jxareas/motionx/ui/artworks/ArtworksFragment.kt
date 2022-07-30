@@ -1,24 +1,20 @@
 package com.jxareas.motionx.ui.artworks
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.doOnPreDraw
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy
-import com.google.android.material.transition.MaterialElevationScale
-import com.google.android.material.transition.MaterialFade
-import com.jxareas.motionx.R
 import com.jxareas.motionx.databinding.FragmentArtworksBinding
 import com.jxareas.motionx.domain.model.Artwork
-import com.jxareas.motionx.ui.adapters.ArtworkListAdapter
+import com.jxareas.motionx.ui.common.adapter.ArtworkListAdapter
+import com.jxareas.motionx.ui.common.listener.ArtworkAdapterListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ArtworksFragment : Fragment(), ArtworkListAdapter.ArtworkAdapterListener {
+class ArtworksFragment : Fragment(), ArtworkAdapterListener {
 
     private var _binding: FragmentArtworksBinding? = null
     private val binding: FragmentArtworksBinding

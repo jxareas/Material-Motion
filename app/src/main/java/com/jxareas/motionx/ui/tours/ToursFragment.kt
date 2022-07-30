@@ -1,32 +1,59 @@
 package com.jxareas.motionx.ui.tours
 
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jxareas.motionx.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.jxareas.motionx.databinding.FragmentToursBinding
+import com.jxareas.motionx.domain.model.Tour
+import com.jxareas.motionx.ui.common.adapter.TourListAdapter
+import com.jxareas.motionx.ui.common.listener.TourAdapterListener
+import dagger.hilt.android.AndroidEntryPoint
 
-class ToursFragment : Fragment() {
+@AndroidEntryPoint
+class ToursFragment : Fragment(), TourAdapterListener {
+    private var _binding: FragmentToursBinding? = null
+    private val binding: FragmentToursBinding
+        get() = _binding!!
 
-    companion object {
-        fun newInstance() = ToursFragment()
-    }
-
-    private lateinit var viewModel: ToursViewModel
+    private val toursAdapter = TourListAdapter(this@ToursFragment)
+    private val viewModel: ToursViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        return inflater.inflate(R.layout.fragment_tours, container, false)
+    ): View {
+        _binding = FragmentToursBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ToursViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
+        setupObservers()
     }
+
+    private fun setupObservers() {
+        viewModel.tours.observe(viewLifecycleOwner) { listOfTours ->
+            toursAdapter.submitList(listOfTours)
+        }
+    }
+
+    private fun setupRecyclerView() = binding.recyclerViewTours.run {
+        adapter = toursAdapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    override fun onArtworkClicked(view: View, item: Tour) {
+        //
+    }
+
 
 }

@@ -1,9 +1,9 @@
 package com.jxareas.motionx.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.jxareas.motionx.data.api.service.ArtworkService
 import com.jxareas.motionx.data.api.constants.ApiEndpoints
-import com.jxareas.motionx.utils.create
+import com.jxareas.motionx.data.api.service.ArtworkService
+import com.jxareas.motionx.data.api.service.TourService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +14,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
+import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -26,6 +27,7 @@ object NetworkModule {
         HttpLoggingInterceptor().apply {
             this.level = HttpLoggingInterceptor.Level.BODY
         }
+
     @Provides
     @Singleton
     fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
@@ -42,7 +44,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideConverter(json : Json): Converter.Factory =
+    fun provideConverter(json: Json): Converter.Factory =
         json.asConverterFactory("application/json".toMediaType())
 
     @Provides
@@ -56,8 +58,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideArtworksService(retrofit : Retrofit) : ArtworkService =
-        retrofit create ArtworkService::class
+    fun provideArtworksService(retrofit: Retrofit): ArtworkService =
+        retrofit.create()
+
+    @Provides
+    @Singleton
+    fun provideTourService(retrofit: Retrofit): TourService =
+        retrofit.create()
 
 
 }

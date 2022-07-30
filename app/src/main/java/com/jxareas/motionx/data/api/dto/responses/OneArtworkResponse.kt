@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class GetOneArtworkResponse(
+data class OneArtworkResponse(
     @SerialName("data")
-    val data : ApiArtwork
+    val data: ApiArtwork,
 )

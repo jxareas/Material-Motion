@@ -11,10 +11,11 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 
-inline infix fun <reified VB : ViewBinding> ViewGroup.bind(
+
+internal inline infix fun <reified VB : ViewBinding> ViewGroup.bind(
     crossinline bindingInflater: LayoutInflater.(parent: ViewGroup, attachToParent: Boolean) -> VB,
-): VB = LayoutInflater.from(context).let { inflater ->
-    bindingInflater.invoke(inflater, this, false)
+): VB = LayoutInflater.from(context).let { layoutInflater ->
+    bindingInflater.invoke(layoutInflater, this, false)
 }
 
 fun NavController.safeNavigate(direction: NavDirections, extras: FragmentNavigator.Extras? = null) {

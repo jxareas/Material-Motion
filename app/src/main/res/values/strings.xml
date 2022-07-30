@@ -49,4 +49,5 @@
     <string name="action_tours">Tours</string>
     <string name="artwork_detail_transition">shared_element_detail</string>
     <string name="action_exhibitions">Exhibitions</string>
+    <string name="content_description_tour_photo">Tour photo</string>
 </resources>
