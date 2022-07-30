@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.tours.ToursFragment">
 
+
+    <include
+        android:id="@+id/loading_screen"
+        layout="@layout/screen_loading"
+        android:visibility="visible" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_tours"
         android:layout_width="match_parent"

@@ -16,7 +16,9 @@ class ExhibitionRepositoryImpl @Inject constructor(
     override suspend fun getLatestExhibitions(): Flow<List<Exhibition>> =
         flow {
             val response = service.fetchLatestExhibitions().data
-            val exhibitions = mapper.mapAllToDomain(response)
+            val exhibitions = mapper.mapAllToDomain(response).filter {
+                it.imageUrl.isNotEmpty()
+            }
             emit(exhibitions)
         }
 

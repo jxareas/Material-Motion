@@ -11,6 +11,9 @@ import com.jxareas.motionx.databinding.FragmentToursBinding
 import com.jxareas.motionx.domain.model.Tour
 import com.jxareas.motionx.ui.common.adapter.TourListAdapter
 import com.jxareas.motionx.ui.common.listener.TourAdapterListener
+import com.jxareas.motionx.ui.common.state.LoadingState
+import com.jxareas.motionx.utils.gone
+import com.jxareas.motionx.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,10 +43,28 @@ class ToursFragment : Fragment(), TourAdapterListener {
         viewModel.tours.observe(viewLifecycleOwner) { listOfTours ->
             toursAdapter.submitList(listOfTours)
         }
+        viewModel.loadingState.observe(viewLifecycleOwner) { loadingState ->
+            loadingState?.let { handleLoadingStatus(it) }
+        }
     }
 
     private fun setupRecyclerView() = binding.recyclerViewTours.run {
         adapter = toursAdapter
+    }
+    private fun handleLoadingStatus(loadingState: LoadingState) {
+        when (loadingState) {
+            LoadingState.LOADING -> {
+                binding.loadingScreen.root.visible()
+                binding.recyclerViewTours.gone()
+            }
+            LoadingState.DONE -> {
+                binding.recyclerViewTours.visible()
+                binding.loadingScreen.root.gone()
+            }
+            LoadingState.ERROR -> {
+
+            }
+        }
     }
 
     override fun onDestroyView() {

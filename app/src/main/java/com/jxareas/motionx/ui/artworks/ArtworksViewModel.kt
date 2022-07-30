@@ -8,9 +8,9 @@ import com.jxareas.motionx.domain.model.Artwork
 import com.jxareas.motionx.domain.usecase.GetLatestArtworksUseCase
 import com.jxareas.motionx.ui.common.state.LoadingState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -39,10 +39,9 @@ class ArtworksViewModel @Inject constructor(
                         _artworks.value = latestArtworks
                         _loadingState.value = LoadingState.DONE
                     }
-            } catch (exception: Exception) {
+            } catch (exception: IOException) {
                 _loadingState.value = LoadingState.ERROR
-                if (exception is CancellationException)
-                    throw exception
+                exception.printStackTrace()
             }
         }
     }

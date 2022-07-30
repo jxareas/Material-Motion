@@ -56,7 +56,6 @@ class ArtworksFragment : Fragment(), ArtworkAdapterListener {
         }
         viewModel.loadingState.observe(viewLifecycleOwner) { loadingState ->
             loadingState?.let { handleLoadingStatus(it) }
-
         }
     }
 

@@ -5,6 +5,7 @@
     <dimen name="margin_low">8dp</dimen>
     <dimen name="card_elevation">20dp</dimen>
     <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_corner_radius_high">32dp</dimen>
     <dimen name="headline_font_size">16sp</dimen>
     <dimen name="margin_small">4dp</dimen>
 </resources>

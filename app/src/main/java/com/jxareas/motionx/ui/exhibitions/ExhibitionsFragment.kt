@@ -10,6 +10,9 @@ import com.jxareas.motionx.databinding.FragmentExhibitionsBinding
 import com.jxareas.motionx.domain.model.Exhibition
 import com.jxareas.motionx.ui.common.adapter.ExhibitionListAdapter
 import com.jxareas.motionx.ui.common.listener.ExhibitionAdapterListener
+import com.jxareas.motionx.ui.common.state.LoadingState
+import com.jxareas.motionx.utils.gone
+import com.jxareas.motionx.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,10 +42,29 @@ class ExhibitionsFragment : Fragment(), ExhibitionAdapterListener {
         viewModel.exhibitions.observe(viewLifecycleOwner) { listOfExhibitions ->
             listOfExhibitions?.let { exhibitionAdapter.submitList(it) }
         }
+        viewModel.loadingState.observe(viewLifecycleOwner) { loadingState ->
+            loadingState?.let { handleLoadingStatus(it) }
+        }
     }
 
     private fun setupRecyclerView() = binding.recyclerViewExhibitions.run {
         adapter = exhibitionAdapter
+    }
+
+    private fun handleLoadingStatus(loadingState: LoadingState) {
+        when (loadingState) {
+            LoadingState.LOADING -> {
+                binding.loadingScreen.root.visible()
+                binding.recyclerViewExhibitions.gone()
+            }
+            LoadingState.DONE -> {
+                binding.recyclerViewExhibitions.visible()
+                binding.loadingScreen.root.gone()
+            }
+            LoadingState.ERROR -> {
+
+            }
+        }
     }
 
     override fun onDestroyView() {
