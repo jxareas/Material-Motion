@@ -11,7 +11,7 @@ buildscript {
         cardview = "1.0.0"
         material = "1.7.0-alpha02"
         retrofit = "2.9.0"
-        navigation = "2.3.0"
+        navigation = "2.5.1"
         ok_http3_logging = "5.0.0-alpha.3"
         constraint_layout = "2.1.4"
         recycler_view = "1.2.1"

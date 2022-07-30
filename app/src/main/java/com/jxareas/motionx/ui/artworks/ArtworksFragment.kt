@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy
 import com.google.android.material.transition.MaterialElevationScale
 import com.google.android.material.transition.MaterialFade
 import com.jxareas.motionx.R
@@ -44,7 +46,9 @@ class ArtworksFragment : Fragment(), ArtworkListAdapter.ArtworkAdapterListener {
     }
 
     private fun setupRecyclerView() = binding.recyclerViewArtworks.run {
-        adapter = artworksAdapter
+        adapter = artworksAdapter.apply {
+            stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
+        }
     }
 
     private fun setupObservers() {

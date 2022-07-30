@@ -1,5 +1,8 @@
 package com.jxareas.motionx.data.mappers
 
+import dagger.assisted.AssistedFactory
+
+
 interface DomainMapper<S, D> {
 
     fun mapToDomain(entity : S) : D

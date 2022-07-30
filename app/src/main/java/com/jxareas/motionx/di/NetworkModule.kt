@@ -2,7 +2,7 @@ package com.jxareas.motionx.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.jxareas.motionx.data.api.service.ArtworkService
-import com.jxareas.motionx.data.api.utils.ApiConstants
+import com.jxareas.motionx.data.api.constants.ApiEndpoints
 import com.jxareas.motionx.utils.create
 import dagger.Module
 import dagger.Provides
@@ -49,7 +49,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(client: OkHttpClient, converter: Converter.Factory): Retrofit =
         Retrofit.Builder()
-            .baseUrl(ApiConstants.BASE_END_POINT)
+            .baseUrl(ApiEndpoints.BASE_END_POINT)
             .client(client)
             .addConverterFactory(converter)
             .build()

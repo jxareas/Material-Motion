@@ -3,8 +3,11 @@ package com.jxareas.motionx.data.mappers
 import com.jxareas.motionx.data.api.dto.model.ApiArtwork
 import com.jxareas.motionx.data.api.dto.responses.GetPaginatedArtworksResponse
 import com.jxareas.motionx.domain.model.Artwork
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ArtworkMapper : DomainMapper<ApiArtwork, Artwork> {
+@Singleton
+class ArtworkMapper @Inject constructor() : DomainMapper<ApiArtwork, Artwork> {
 
     override fun mapToDomain(entity: ApiArtwork): Artwork =
         Artwork(entity.id,

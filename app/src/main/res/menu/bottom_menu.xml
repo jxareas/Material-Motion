@@ -4,20 +4,20 @@
     tools:context="com.jxareas.motionx.ui.MainActivity">
     <item
         android:id="@+id/artworksFragment"
+        android:icon="@drawable/ic_artworks"
         android:orderInCategory="100"
-        android:icon="@android:drawable/ic_menu_gallery"
         android:title="@string/action_artworks"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/toursFragment"
+        android:icon="@drawable/ic_tours"
         android:orderInCategory="100"
-        android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/action_tours"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/exhibitionsFragment"
+        android:icon="@drawable/ic_exhibitions"
         android:orderInCategory="100"
-        android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/action_exhibitions"
 
         app:showAsAction="ifRoom" />
